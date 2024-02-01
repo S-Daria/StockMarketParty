@@ -1,5 +1,6 @@
 from flask import Flask
 from .database import db  # Import db
+from .manage_inputs import register_commands
 
 def create_app():
     app = Flask(__name__)
@@ -15,5 +16,7 @@ def create_app():
     app.register_blueprint(guest_bp)
     app.register_blueprint(drink_bp)
     app.register_blueprint(activity_bp)
+
+    register_commands(app, db)
 
     return app

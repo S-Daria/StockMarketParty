@@ -18,4 +18,5 @@ class Activity(db.Model):
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     guest_id = db.Column(db.Integer, db.ForeignKey('guest.id'), nullable=False)
+    amount = db.Column(db.Float, nullable=False)
     incoming = db.Column(db.Boolean, nullable=False)

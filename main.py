@@ -2,7 +2,7 @@ from app import create_app, db
 
 app = create_app()
 
-@app._got_first_request
+@app.before_first_request
 def create_tables():
     db.create_all()
 
